@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Celsius a Fahrenheit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://placehold.co/1920x1080?text=Anime+characters+background');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
+    <div class="bg-white bg-opacity-90 p-12 rounded-3xl shadow-2xl max-w-lg w-full">
+        <h1 class="text-5xl font-extrabold text-center text-green-700 mb-6">Celsius a Fahrenheit</h1>
+        <p class="text-center text-gray-800 mb-8">Conversión de grados Celsius a Fahrenheit utilizando Tensorflowjp<br>Realizado por abedvpoma</p>
+        <hr class="border-t border-green-700 mb-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-semibold mb-6">Convertidor de Temperaturas</h2>
+            <p class="text-xl mb-4">Grados Celsius: <span id="celsiusValue" class="font-bold text-green-700">0</span></p>
+            <input type="range" min="-300" max="300" value="0" class="w-full mb-6" id="celsiusRange" oninput="updateCelsiusValue()">
+            <p class="text-md text-gray-800 mb-8">Desliza para cambiar el valor de grados Celsius°</p>
+            <h3 class="text-2xl font-semibold mb-4">Resultado</h3>
+            <div class="bg-green-200 p-6 rounded-lg shadow-inner">
+                <p id="result" class="text-green-700 font-semibold text-xl">0° grados Celsius equivalen a 32° grados Fahrenheit</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCelsiusValue() {
+            const celsius = document.getElementById('celsiusRange').value;
+            document.getElementById('celsiusValue').innerText = celsius;
+            const fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('result').innerText = `${celsius}° grados Celsius equivalen a ${fahrenheit.toFixed(1)}° grados Fahrenheit`;
+        }
+    </script>
+</body>
+</html>
